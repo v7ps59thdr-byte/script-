@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khaled Scripts ⚡</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #0f0f12;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+        .header {
+            margin: 20px auto 40px auto;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            border-radius: 20px;
+            max-width: 500px;
+            box-shadow: 0 8px 20px rgba(106, 17, 203, 0.4);
+        }
+        .header h1 { margin: 0; font-size: 32px; font-weight: 800; }
+        .header p { margin: 10px 0 0 0; color: #e0e0e0; font-size: 16px; }
+        .card {
+            background-color: #1a1a24;
+            border: 1px solid #2d2d3d;
+            border-radius: 16px;
+            padding: 25px;
+            max-width: 450px;
+            margin: 20px auto;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+        }
+        .card h3 { margin-top: 0; color: #00d2ff; font-size: 22px; }
+        .card p { color: #aaaaaa; font-size: 14px; line-height: 1.5; }
+        .btn-copy {
+            background: linear-gradient(135deg, #00d2ff, #0072ff);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0, 114, 255, 0.3);
+        }
+        .btn-copy:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 114, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Khaled Scripts ⚡</h1>
+        <p>Best and Safest Roblox Scripts</p>
+    </div>
+
+    <div class="card">
+        <h3>🎯 Aimbot Script</h3>
+        <p>Perfect lock-on aimbot with high-performance execution for all shooting games.</p>
+        <button class="btn-copy" onclick="copyScript('PUT_YOUR_AIMBOT_SCRIPT_HERE')">Copy Script</button>
+    </div>
+
+    <div class="card">
+        <h3>🚀 Fly & Speed Hack</h3>
+        <p>Bypass anti-cheat easily and fly across the map with adjustable speed settings.</p>
+        <button class="btn-copy" onclick="copyScript('PUT_YOUR_FLY_SCRIPT_HERE')">Copy Script</button>
+    </div>
+
+    <script>
+        function copyScript(scriptText) {
+            navigator.clipboard.writeText(scriptText).then(() => {
+                alert("Script copied successfully! paste it into your executor 🚀");
+            }).catch(err => {
+                alert("Failed to copy automatically, please copy manually.");
+            });
+        }
+    </script>
+
+</body>
+</html>
