@@ -3,62 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع خالد للسكربتات ⚡</title>
+    <title>صانع السكربتات الخاص بخالد ⚡</title>
     <style>
         body {
-            background-color: #0f172a;
-            color: #ffffff;
+            background-color: #000000; /* أسود ملكي */
+            color: #00ffff; /* سماوي نيون */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
-            padding: 40px 20px;
+            padding: 30px 20px;
             margin: 0;
         }
         h1 {
-            color: #38bdf8;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            color: #00ffff;
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; /* إضاءة نيون */
         }
         p {
-            color: #94a3b8;
-            font-size: 1.1rem;
-            margin-bottom: 40px;
+            color: #a5f3fc;
+            font-size: 1rem;
+            margin-bottom: 30px;
         }
-        .btn-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            max-width: 400px;
+        .container {
+            max-width: 500px;
             margin: 0 auto;
+            background: #0b0f19; /* أسود داكن */
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #00ffff; /* إطار نيون */
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+            text-align: right;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            color: #00ffff;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #00ffff;
+            background-color: #000000;
+            color: #ffffff;
+            box-sizing: border-box;
+            box-shadow: 0 0 5px rgba(0, 255, 255, 0.2);
+        }
+        input[type="text"]:focus {
+            outline: none;
+            box-shadow: 0 0 10px #00ffff;
+        }
+        .checkbox-group {
+            background: #05070c;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            border: 1px dashed #00ffff;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            color: #e0f2fe;
+            transition: color 0.2s;
+        }
+        .checkbox-item:hover {
+            color: #00ffff;
+        }
+        .checkbox-item:last-child {
+            margin-bottom: 0;
+        }
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #00ffff;
         }
         .btn {
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-            color: white;
-            border: none;
-            padding: 15px 25px;
-            font-size: 1.2rem;
+            width: 100%;
+            background: transparent;
+            color: #00ffff;
+            border: 2px solid #00ffff;
+            padding: 14px;
+            font-size: 1.1rem;
             font-weight: bold;
-            border-radius: 10px;
+            border-radius: 8px;
             cursor: pointer;
-            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.5);
-            transition: transform 0.2s;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+            transition: all 0.2s ease-in-out;
+            margin-bottom: 15px;
+        }
+        .btn:hover {
+            background: #00ffff;
+            color: #000000;
+            box-shadow: 0 0 20px #00ffff;
+        }
+        /* زر المنتدى بلون نيون مميز ومتناسق */
+        .btn-forum {
+            color: #38bdf8;
+            border-color: #38bdf8;
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+            margin-bottom: 0;
+        }
+        .btn-forum:hover {
+            background: #38bdf8;
+            color: #000000;
+            box-shadow: 0 0 20px #38bdf8;
         }
         .btn:active {
             transform: scale(0.98);
+        }
+        #result-container {
+            display: none;
+            margin-top: 25px;
+            text-align: left;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            background: #000000;
+            color: #00ffff;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #00ffff;
+            font-family: monospace;
+            resize: none;
+            box-sizing: border-box;
+            direction: ltr;
+            box-shadow: inset 0 0 5px rgba(0, 255, 255, 0.3);
+        }
+        .btn-copy {
+            border-color: #10b981;
+            color: #10b981;
+            margin-top: 10px;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+        }
+        .btn-copy:hover {
+            background: #10b981;
+            color: #000000;
+            box-shadow: 0 0 20px #10b981;
         }
     </style>
 </head>
 <body>
 
-    <h1>موقع خالد للسكربتات ⚡</h1>
-    <p>أهلاً بك في موقعي الخاص بالسكربتات والأكواد</p>
+    <h1>صانع السكربتات الذكي ⚡</h1>
+    <p>اصنع سكربت المزايا الخاص بك وبحقوقك بالكامل</p>
 
-    <div class="btn-container">
-        <button class="btn" onclick="
-            navigator.clipboard.writeText('-- ==========================================\n--  🔥 سكربت Block Spin Combat الأسطوري 🔥\n--  ✨ تم التعديل ونشر الحقوق بواسطة: خالد ✨\n--  🔗 رابط الموقع: https://v7ps59thdr-byte.github.io/script-/\n-- ==========================================\n\nprint(\'Loading Khaled\'s Block Spin Script...\')\n\nloadstring(game:HttpGet(\'https://rawscripts.net/raw/BlockSpin-Combat-Script-Rage-Slient-Aimbot-Esp-and-more-OP-feature-40051\'))()\n\n-- ==========================================\n--  ⚡ تم التفعيل بنجاح! استمتع باللعب يا بطل ⚡\n-- ==========================================');
-            alert('تم نسخ سكربت Block Spin بحقوق خالد بنجاح! جاهز للصقه في الـ Executor.');
-        ">نسخ سكربت Block Spin (حقوق خالد) 🔥</button>
+    <div class="container">
+        <!-- خانة اسم صاحب السكربت -->
+        <div class="form-group">
+            <label for="username">اسمك (ليوضع في حقوق السكربت):</label>
+            <input type="text" id="username" placeholder="اكتب اسمك هنا...">
+        </div>
+
+        <!-- قائمة المزايا للاختيار -->
+        <label>اختر المزايا التي تريد تفعيلها في السكربت:</label>
+        <div class="checkbox-group">
+            <label class="checkbox-item">
+                <input type="checkbox" id="aimbot" value="aimbot">
+                <span>🎯 Silent Aimbot (التصويب التلقائي الصامت)</span>
+            </label>
+            <label class="checkbox-item">
+                <input type="checkbox" id="esp" value="esp">
+                <span>👁️ ESP / Wallhack (رؤية اللاعبين خلف الجدران)</span>
+            </label>
+            <label class="checkbox-item">
+                <input type="checkbox" id="rage" value="rage">
+                <span>🔥 Rage Mode (النمط العنيف للقتال السريع)</span>
+            </label>
+            <label class="checkbox-item">
+                <input type="checkbox" id="fly" value="fly">
+                <span>✈️ Fly Hack (الطيران داخل الخريطة)</span>
+            </label>
+        </div>
+
+        <!-- زر التوليد -->
+        <button class="btn" onclick="generateScript()">⚡ توليد السكربت الخاص بي</button>
+
+        <!-- زر منتدى الاقتراحات واللايكات المدمج -->
+        <button class="btn btn-forum" onclick="window.open('https://github.com/v7ps59thdr-byte/script-/discussions', '_blank');">💡 منتدى الاقتراحات واللايكات</button>
+
+        <!-- مكان ظهور الكود الجاهز للنسخ -->
+        <div id="result-container">
+            <label style="text-align: right; margin-top: 15px;">سكربتك جاهز! انسخه الآن:</label>
+            <textarea id="script-output" readonly></textarea>
+            <button class="btn btn-copy" onclick="copyGeneratedScript()">📋 نسخ الكود بالكامل</button>
+        </div>
     </div>
 
-</body>
-</html
+    <script>
+        function generateScript() {
+            var name = document.getElementById('username').value || 'Guest';
+            var aimbot = document.getElementById('aimbot').checked;
+            var esp = document.getElementById('esp').checked;
+            var rage = document.getElementById('rage').checked;
+            var fly = document.getElementById('fly').checked;
 
+            var finalScript = "-- ==========================================\n";
+            finalScript += "--  🔥 Custom Roblox Script Generated 🔥\n";
+            finalScript += "--  👤 Created By: " + name + "\n";
+            finalScript += "--  🛠️ Powered by Khaled's Generator\n";
+            finalScript += "-- ==========================================\n\n";
+            
+            finalScript += "print('Loading custom features for " + name + "...')\n\n";
+
+            if(aimbot) {
+                finalScript += "-- [Feature: Silent Aimbot]\nloadstring(game:HttpGet('https://rawscripts.net/raw/BlockSpin-Combat-Script-Rage-Slient-Aimbot-Esp-and-more-OP-feature-40051'))()\n\n";
+            }
+            if(esp) {
+                finalScript += "-- [Feature: ESP Wallhack]\n-- Code for ESP features activated\n\n";
+            }
+            if(rage) {
+                finalScript += "-- [Feature: Rage Mode]\n-- Code for Combat Rage features activated\n\n";
+            }
+            if(fly) {
+                finalScript += "-- [Feature: Fly Hack]\n-- Code for Fly mode activated\n\n";
+            }
+
+            finalScript += "print('All selected features activated successfully!')";
+
+            document.getElementById('script-output').value = finalScript;
+            document.getElementById('result-container').style.display = 'block';
+        }
+
+        function copyGeneratedScript() {
+            var copyText = document.getElementById('script-output');
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(copyText.value);
+            alert('تم نسخ سكربتك المخصص بنجاح! جاهز للصقه في الـ Executor.');
+        }
+    </script>
+
+</body>
+</html>
