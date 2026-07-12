@@ -2,32 +2,50 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>موقع خالد للسكربتات ⚡</title>
+    <title>Neon Script Hub</title>
     <style>
-        body { background: #000; color: #00ffff; font-family: sans-serif; text-align: center; padding: 20px; }
-        .box { border: 2px solid #00ffff; padding: 20px; border-radius: 15px; display: inline-block; box-shadow: 0 0 15px #00ffff; }
-        textarea { width: 300px; height: 150px; background: #000; color: #00ffff; border: 1px solid #00ffff; margin: 10px 0; }
-        button { background: #00ffff; color: #000; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        body { background-color: #000; color: #0cf; font-family: 'Courier New', Courier, monospace; margin: 0; padding: 0; }
+        
+        /* زر القائمة */
+        #menu-btn { position: fixed; top: 10px; left: 10px; padding: 10px 20px; background: #000; border: 2px solid #0cf; color: #0cf; cursor: pointer; border-radius: 5px; z-index: 1000; box-shadow: 0 0 10px #0cf; }
+        
+        /* القائمة */
+        #sidebar { position: fixed; top: 0; left: -250px; width: 250px; height: 100%; background: #111; border-left: 2px solid #0cf; transition: 0.3s; padding-top: 60px; z-index: 999; }
+        #sidebar.active { left: 0; }
+        .menu-item { padding: 20px; color: #0cf; border-bottom: 1px solid #333; cursor: pointer; }
+        
+        /* المدخلات */
+        .box { padding: 20px; margin-top: 80px; text-align: center; }
+        input { background: #000; border: 1px solid #0cf; color: #0cf; padding: 10px; width: 80%; margin-bottom: 10px; box-shadow: 0 0 5px #0cf; }
+        button { background: #0cf; color: #000; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold; }
     </style>
 </head>
 <body>
+
+    <button id="menu-btn" onclick="toggleMenu()">☰ القائمة</button>
+
+    <div id="sidebar">
+        <div class="menu-item">تعريف الموقع: نسخة النيون</div>
+        <div class="menu-item">حالة النظام: متصل</div>
+    </div>
+
     <div class="box">
-        <h1>سكربت خالد الخاص 🚀</h1>
-        <p>انسخ السكربت من هنا مباشرة:</p>
-        <textarea id="myScript" readonly>
--- هنا تحط كود الـ Lua الخاص بك
-loadstring(game:HttpGet("https://raw.githubusercontent.com/v7ps59thdr-byte/script-/main/myscripy.lua"))()
-        </textarea>
-        <br>
-        <button onclick="copyScript()">📋 نسخ السكربت</button>
+        <h2>إنشاء ملف جديد</h2>
+        <input type="text" id="filename" placeholder="اكتب اسم الملف هنا...">
+        <button onclick="createFile()">إنشاء الملف</button>
     </div>
 
     <script>
-        function copyScript() {
-            var copyText = document.getElementById("myScript");
-            copyText.select();
-            document.execCommand("copy");
-            alert("تم النسخ يا بطل!");
+        function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
+        
+        function createFile() {
+            let name = document.getElementById('filename').value;
+            if(name) {
+                alert("تم إنشاء الملف بنجاح باسم: " + name);
+                // هنا سأقوم بربطه معك لاحقاً
+            } else {
+                alert("يرجى كتابة اسم للملف!");
+            }
         }
     </script>
 </body>
